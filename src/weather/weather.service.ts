@@ -1,6 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import axios from 'axios';
-import { xml2json } from 'xml-js';
+import { refactJsonWeather } from 'src/utils/convertWeather';
+import { xml2js } from 'xml-js';
 
 @Injectable()
 export class WeatherService {
@@ -8,14 +9,11 @@ export class WeatherService {
     try {
       const url = `${process.env.BASE_URL}/MEWS/DigitalForecast/DigitalForecast-${id}.xml`;
       const response = await axios.get(url);
-      const jsonData = xml2json(response.data, {
+      const jsonData = xml2js(response.data, {
         compact: true,
-        ignoreDeclaration: true,
-        attributesKey: 'attributes',
-        textKey: 'value',
       });
-      const parsedData = JSON.parse(jsonData);
-      return parsedData;
+      const refactoredJsonWeathers = refactJsonWeather(jsonData);
+      return refactoredJsonWeathers;
     } catch (error) {
       throw new HttpException(
         'Failed to fetch or parse XML data',
