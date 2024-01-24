@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -14,14 +14,29 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+.bg-card-weather {
+  background: linear-gradient(0deg, rgba(0, 115, 255, 0.98), rgb(97, 177, 252));
+}
+
+.bg-glass {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+}
+
+.temp-text {
+  color: #fff;
+  /* teks shadow */
+  text-shadow: -4px 8px 50px rgba(0, 0, 0, 0.1);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  font-weight: 500;
 }
