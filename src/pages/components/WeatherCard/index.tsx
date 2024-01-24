@@ -8,7 +8,7 @@ import HeavyRain from "../Icons/HeavyRain";
 const WeatherCard = () => {
   const [currentTime, setCurrentTime] = useState(moment().format("dddd, DD MM YYYY"));
   return (
-    <div className="w-full flex justify-center my-4">
+    <div className="w-full flex justify-center my-2">
       <div className="w-[300px] h-[470px] bg-card-weather rounded-2xl p-6 relative flex flex-col justify-between">
         <div className="flex items-center gap-2 text-sm font-semibold text-white">
           <Location width={15} />
@@ -26,15 +26,15 @@ const WeatherCard = () => {
               <Wind />
               <Hum width={28} />
             </div>
-            <div className="flex flex-col items-between w-full ml-1">
+            <div className="flex flex-col items-end w-full ml-3">
               <p className="text-white text-sm h-[30px]">Wind</p>
               <p className="text-white text-sm">Hum</p>
             </div>
-            <div className="flex flex-col justify-center items-center w-full">
+            <div className="flex flex-col items-center ml-2.5 w-full">
               <p className="text-white text-sm h-[30px]">|</p>
               <p className="text-white text-sm">|</p>
             </div>
-            <div className="flex flex-col items-between w-full  col-span-2">
+            <div className="flex flex-col items-start ml-2 w-full col-span-2">
               <p className="text-white text-sm h-[30px]">10 Km/h</p>
               <p className="text-white text-sm">80%</p>
             </div>
