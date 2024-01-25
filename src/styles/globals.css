@@ -26,9 +26,9 @@ body {
 }
 
 .bg-glass {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(2.5px);
-  -webkit-backdrop-filter: blur(2.5px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgb(255, 255, 255, 0.3);
 }
 
 .temp-text {

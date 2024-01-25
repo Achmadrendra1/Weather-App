@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 import { weatherCodeToText } from "@/utils/weatherCode";
 import {cardCodeToText} from "@/utils/windCode"
@@ -21,6 +20,7 @@ export const refactJsonWeather = (weathers = {}) => {
 
     if (key === "area") {
       const areas = weathers?.data?.forecast.area.map((area, indexArea) => {
+        const city_name = area.name[1]._text;
         // area
 
         const params = weathers?.data?.forecast.area[indexArea].parameter?.map((parameter, indexParameter) => {
@@ -37,7 +37,7 @@ export const refactJsonWeather = (weathers = {}) => {
 
               return {
                 ...timeRange._attributes,
-                celcius: `${celcius}&deg;C`,
+                celcius: `${celcius}`,
                 fahrenheit: `${fahrenheit}&deg;F`,
               };
             }
@@ -93,6 +93,7 @@ export const refactJsonWeather = (weathers = {}) => {
 
         return {
           ...area._attributes,
+          city_name,
           params,
         };
       });
