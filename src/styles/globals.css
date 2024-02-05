@@ -21,6 +21,14 @@ body {
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
+.bg-main {
+  background: #7918f2;
+  background: -webkit-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
+  background: -o-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
+  background: -moz-linear-gradient(-45deg, #ac32e4, #7918f2, #4801ff);
+  background: linear-gradient(0deg, #ac32e4, #7918f2, #4801ff);
+}
+
 .bg-card-weather {
   background: linear-gradient(0deg, rgba(0, 115, 255, 0.98), rgb(97, 177, 252));
 }
